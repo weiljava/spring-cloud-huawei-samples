@@ -14,8 +14,8 @@ spring:
         healthCheckInterval: 30
       config:
         # serverAddr: https://cse.cn-south-1.myhuaweicloud.com
-        serverType: config-center
-        serverAddr:  http://127.0.0.1:30113
+        serverType: kie
+        serverAddr:  http://127.0.0.1:30110
         fileSource: provider.yaml
 
       # Configure AK/SK credentials if needed. Default not enabled.
@@ -25,3 +25,6 @@ spring:
         secretKey: your sk
         akskCustomCipher: default
         project: cn-south-1
+
+server:
+  env: development

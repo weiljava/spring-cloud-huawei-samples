@@ -2,3 +2,8 @@
 
 server:
   port: 8082
+
+
+
+consumer:
+  config: abc
