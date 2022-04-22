@@ -12,3 +12,7 @@ spring:
             - name: governance
           predicates:
             - Path=/**
+
+
+consumer:
+  config: gateway
