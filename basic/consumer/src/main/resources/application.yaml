@@ -4,6 +4,14 @@ server:
   port: 8082
 
 
+consumer:
+  config: 123
+
+
+provider:
+  url: http://127.0.0.1:8080
+
+
 
 consumer:
   config: abc
