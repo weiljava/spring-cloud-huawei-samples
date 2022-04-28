@@ -4,8 +4,8 @@ server:
   port: 8082
 
 
-consumer:
-  config: 123
+#consumer:
+#  config: 123
 
 
 provider:
@@ -15,3 +15,9 @@ provider:
 
 consumer:
   config: abc
+
+
+feign:
+  interceptor:
+    feignMapUrl:
+      feignConsumerService: http://127.0.0.1:8086
