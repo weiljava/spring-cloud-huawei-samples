@@ -1,8 +1,7 @@
 package com.huaweicloud.samples;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import com.huaweicloud.samples.domain.Student;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class ProviderController {
@@ -14,5 +13,10 @@ public class ProviderController {
   @GetMapping("/sayHelloFeign")
   public String sayHelloFeign(@RequestParam("name") String name) {
     return "Hello " + name;
+  }
+
+  @PostMapping("/addStudent")
+  public String addStudent(@RequestBody Student student){
+    return student.toString();
   }
 }
