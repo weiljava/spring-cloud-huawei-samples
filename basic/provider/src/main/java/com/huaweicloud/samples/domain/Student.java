@@ -17,6 +17,6 @@ public class Student {
 
     @Override
     public String toString() {
-        return "I am " + name + ',' + age + "years old, score is " + score;
+        return "I am " + name + ',' + age + " years old, score is " + score;
     }
 }

@@ -3,13 +3,16 @@ package com.huaweicloud.samples;
 import com.huaweicloud.samples.client.FeignConsumerService;
 import com.huaweicloud.samples.domain.User;
 import com.huaweicloud.samples.service.UserService;
+import com.huaweicloud.samples.service.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @RestController
 @RefreshScope
@@ -21,6 +24,7 @@ public class ConsumerController {
     private FeignConsumerService feignConsumerService;
 
     @Resource
+//    @Qualifier("userServiceImpl")
     private UserService userService;
 
     @Value("${consumer.config}")
@@ -60,9 +64,20 @@ public class ConsumerController {
     }
 
 
+    @PostMapping("/addStudentList")
+    public String addStudent(@RequestBody List<User> user) {
+        return feignConsumerService.addStudentList(user);
+    }
+
+    /**
+     * 测试两个实现类的选择示例
+     * @param user
+     * @return
+     */
     @PostMapping("/addStudentLocal")
     public User addStudentLocal(@RequestBody User user) {
-        userService.addUser(user);
+        String name = userService.addUser(user);
+        user.setName(name);
         user.setAge(80);
         return user;
     }

@@ -9,13 +9,13 @@ spring:
         serviceName: ${spring.application.name}
         watch: false
         # address: https://cse.cn-south-1.myhuaweicloud.com
-        address: http://122.112.147.60:30100
+        address: http://127.0.0.1:30100
         version: 0.0.1
         healthCheckInterval: 30
       config:
         # serverAddr: https://cse.cn-south-1.myhuaweicloud.com
         serverType: kie
-        serverAddr:  http://122.112.147.60:30110
+        serverAddr:  http://127.0.0.1:30110
         fileSource: gateway.yaml
 
       # Configure AK/SK credentials if needed. Default not enabled.

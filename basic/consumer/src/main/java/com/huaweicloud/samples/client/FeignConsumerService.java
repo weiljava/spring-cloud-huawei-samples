@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.List;
+
 @FeignClient(value = "feignConsumerService", url = "${provider.url}")
 public interface FeignConsumerService {
 
@@ -15,4 +17,7 @@ public interface FeignConsumerService {
 
     @PostMapping("/addStudent")
     String addStudent(@RequestBody User user);
+
+    @PostMapping("/addStudentList")
+    String addStudentList(@RequestBody List<User> user);
 }

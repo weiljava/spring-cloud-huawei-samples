@@ -8,7 +8,7 @@ spring:
         enabled: true
         watch: false
         # address: https://cse.cn-south-1.myhuaweicloud.com
-        address: http://122.112.147.60:30100
+        address: http://127.0.0.1:30100
         appName: basic-application
         serviceName: ${spring.application.name}
         version: 0.0.1
@@ -16,7 +16,7 @@ spring:
       config:
         # serverAddr: https://cse.cn-south-1.myhuaweicloud.com
         serverType: kie
-        serverAddr:  http://122.112.147.60:30110
+        serverAddr:  http://127.0.0.1:30110
         fileSource: json
 
       # Configure AK/SK credentials if needed. Default not enabled.
