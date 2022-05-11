@@ -49,10 +49,6 @@ public class MyBeanDefinitionRegistryPostProcessor implements BeanDefinitionRegi
 
     @Override
     public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
-//        Iterator<String> it= beanFactory.getBeanNamesIterator();
-//        while(it.hasNext()){
-//            log.info(it.next());
-//        }
     }
 
 }

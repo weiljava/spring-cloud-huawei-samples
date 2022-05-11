@@ -1,9 +1,11 @@
-package com.huaweicloud.samples;
+package com.huaweicloud.samples.controller;
 
 import com.huaweicloud.samples.client.FeignConsumerService;
+import com.huaweicloud.samples.config.BeanProperties;
 import com.huaweicloud.samples.domain.User;
 import com.huaweicloud.samples.service.UserService;
 import com.huaweicloud.samples.service.UserServiceImpl;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
@@ -16,6 +18,8 @@ import java.util.List;
 
 @RestController
 @RefreshScope
+@Slf4j
+@RequestMapping("/consumer")
 public class ConsumerController {
     @Autowired
     private RestTemplate restTemplate;
@@ -29,6 +33,9 @@ public class ConsumerController {
 
     @Value("${consumer.config}")
     private String configValue;
+
+    @Resource
+    private BeanProperties beanProperties;
 
     // consumer service which delegate the implementation to provider service.
     @GetMapping("/sayHello")
@@ -79,7 +86,7 @@ public class ConsumerController {
         String name = userService.addUser(user);
         user.setName(name);
         user.setAge(80);
+        log.info("" + beanProperties.isFlag());
         return user;
     }
-
 }

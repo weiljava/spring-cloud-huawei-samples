@@ -31,3 +31,17 @@ logging:
         samples:
           config:
             MyClient: INFO
+
+
+spring:
+  redis:
+    host: 192.168.211.128
+    port: 6379
+    password: 123456
+
+
+
+config:
+  service:
+    a:
+      enable: true
