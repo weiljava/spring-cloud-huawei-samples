@@ -35,7 +35,7 @@ public class RedisController {
     }
 
     @GetMapping("/getUser")
-    public User getUser(@RequestParam("id") String id) {
+    public User getUser(@RequestParam("id") Long id) {
         return JSONObject.parseObject(redisTemplate.opsForValue().get(id).toString(), User.class);
     }
 
